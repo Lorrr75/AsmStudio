@@ -23,7 +23,12 @@ main:
 	mov	hInstance, eax			; memorizziamo l'handle per sicurezza
 
 	invoke	GetCommandLine			; ottiene la linea di comando. se il tuo programma non processa
-						; la linea di comando puoi cancellare questa linea
+	mov	CommandLine, eax		; la linea di comando puoi cancellare queste 2 linee
+
+	
+	; come per il c++ chiamaiamo il WinMain per iniziare il programma
+	invoke 	WinMain, hInstance, NULL, ADDR CommandLine, SW_SHOWNORMAL
+
 	mov	CommandLine, eax		; e lo memorizzamo in una variabile globale
 	; programma terminato, restituisce il controllo a Windows
 	invoke	ExitProcess, 0
@@ -32,6 +37,11 @@ main:
 
 include code\WinMain.asm
 include code\MainWndProc.asm
+include code\RegisterClass.asm
+include code\InitIde.asm
+include code\DeInitIde.asm
+
+
 
 ; qui indichiamo il punto d'ingresso del programma
 end	main
