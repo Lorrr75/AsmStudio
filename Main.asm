@@ -33,8 +33,8 @@ main:
 	; come per il c++ chiamaiamo il WinMain come corpo del programma principale
 	invoke 	WinMain, hInstance, NULL, ADDR CommandLine, SW_SHOWNORMAL
 
-	; programma terminato con successo, restituisce il controllo a Windows
-	invoke	ExitProcess, 0
+	; programma terminato con risultato il eax, restituisce il controllo a Windows
+	invoke	ExitProcess, eax
 
 ; alleghiamo altri file sorgente per la compilazione
 
