@@ -5,7 +5,7 @@
 ;
 WinMain proc hInst:DWORD, hPrevInst:DWORD, szCmdLine:DWORD, nCmdShow:DWORD
 
-
+	
 
 	ret
 WinMain endp

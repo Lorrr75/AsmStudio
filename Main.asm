@@ -3,15 +3,19 @@
 .model	flat, stdcall
 option casemap:none
 
-
-include	CommonHeader.asm	; Qui ci saranno gli header che serviranno
-include CommonLib.asm		; Qui ci sono le librerie da importare
-include Proto.asm		; Qui inseriremo i prototipi di funzioni
-include data\Const.asm		; Qui ci saranno le costanti (i tipi EQU ecc)
-include data\Handle.asm		; Qui ci saranno tutte le veariabili HANDLE ? per la gestione delle finestre
-include data\string.asm		; Qui ci saranno tutte le stringhe e messaggi d'errore
-include data\pointerdata.asm	; Qui ci saranno tutti i puntatori non inizizializzati col '?'
-				; Qui ci c'è tanto spazio per aggiungere altri file da includere
+;
+; sezione inclusione codice sorgente e "creare un unico file" da compilare
+;
+include	include\CommonHeader.inc	; Qui ci saranno gli header che serviranno
+include include\CommonLib.inc		; Qui ci sono le librerie da importare
+include include\Proto.inc		; Qui inseriremo i prototipi di funzioni
+include data\ConstAndStrings.asm 	; Qui ci saranno le costanti (i tipi EQU ecc) e le stringhe con nomi ed messaggi
+				 	; d'errore che non saranno modificate
+include data\Handle.asm			; Qui ci saranno tutte le veariabili HANDLE ? e HWND ? ecc.ecc., non inizializzati
+					; per la gestione delle finestre
+include data\Buffer.asm			; Qui ci saranno tutti buffer
+include data\PointerData.asm		; Qui ci saranno tutti i puntatori non inizizializzati col '?'
+					; Qui ci c'è tanto spazio per aggiungere altri file da includere
 
 				
 .code
@@ -26,22 +30,21 @@ main:
 	mov	CommandLine, eax		; la linea di comando puoi cancellare queste 2 linee
 
 	
-	; come per il c++ chiamaiamo il WinMain per iniziare il programma
+	; come per il c++ chiamaiamo il WinMain come corpo del programma principale
 	invoke 	WinMain, hInstance, NULL, ADDR CommandLine, SW_SHOWNORMAL
 
-	mov	CommandLine, eax		; e lo memorizzamo in una variabile globale
-	; programma terminato, restituisce il controllo a Windows
+	; programma terminato con successo, restituisce il controllo a Windows
 	invoke	ExitProcess, 0
 
 ; alleghiamo altri file sorgente per la compilazione
 
-include code\WinMain.asm
-include code\MainWndProc.asm
-include code\RegisterClass.asm
-include code\InitIde.asm
-include code\DeInitIde.asm
+include code\WinMain.asm			; corpo principale del programma
+include code\MainWndProc.asm			; funzione callback gestione messaggi finestra principale
+include code\RegisterWindowMainClass.asm	; funzione registrazione classe della finestra
+include code\InitIde.asm			; funzione di inizializzazione 
+include code\DeInitIde.asm			; funzione di cancellazione dai inizializzati
 
 
 
-; qui indichiamo il punto d'ingresso del programma
+; qui indichiamo la fine del file con il punto d'ingresso del programma
 end	main
