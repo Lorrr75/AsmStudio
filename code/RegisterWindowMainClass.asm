@@ -10,7 +10,7 @@ local	wc:WNDCLASSEX						;crea variabili locali sullo stack
 local	msg:MSG
 
 	;riempe la struttura della classe con i dati
-	mov	wc.cbSize, SIZEOF WNDCLASSEX			; per tutte le strutture terminanti in EX necessitano l'inserimento
+	mov	wc.cbSize, SIZEOF WNDCLASSEX		
 								; della dimensione della struttura in byte
 	mov	wc.style, CS_HREDRAW or CS_VREDRAW		; stile della finestra
 	mov	wc.lpfnWndProc, OFFSET MainWndProc		; offset della funzione di gestioni dei messaggi della finestra
