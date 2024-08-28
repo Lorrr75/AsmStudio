@@ -7,9 +7,8 @@
 szMainClassName 			db "LR_VisAsm",0		; Nome della classe finestra principale
 szAppName				db "Visual Asm",0		; Nome dell'applicazione
 szMainMenu				db NULL				; Nome del menu nella finestra principale la risorsa si trova nel file res.rc
-
-OurText	  db "Assembly Win32 è grande e facile!",0
-
+WC_TABCONTROL				db "SysTabControl32",0		; nome del controllo Tab (se cambio il nome il controllo non funziona)
+szTitle					db "FileTest.asm",0		; test nome del tab
 
 ;
 ; Messaggi di Attenzione per Message Box

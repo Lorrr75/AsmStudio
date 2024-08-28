@@ -42,6 +42,7 @@ include code\MainWndProc.asm			; funzione callback gestione messaggi finestra pr
 include code\RegisterWindowMainClass.asm	; funzione registrazione classe della finestra
 include code\InitIde.asm			; funzione di inizializzazione 
 include code\DeInitIde.asm			; funzione di cancellazione dai inizializzati
+include code\TabComponent.asm			; funzioni per la creazione del componente Tab
 
 ; qui indichiamo la fine del file con il punto d'ingresso del programma
 end	main

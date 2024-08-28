@@ -13,6 +13,16 @@ local	rect:RECT
 	.IF uMsg == WM_DESTROY
 		invoke PostQuitMessage, NULL
 
+	.ELSEIF uMsg == WM_CREATE
+		mov	rect.left, 0
+		mov	rect.top, 0
+		mov	rect.right, 300
+		mov	rect.bottom, 200		
+		invoke	TabCreate, hWnd, rect
+		mov	hTab, eax
+		lea	eax, szTitle
+		invoke	 AddTab, hTab, eax
+
 	.ELSEIF uMsg == WM_PAINT
 		xor	eax, eax
 		ret
