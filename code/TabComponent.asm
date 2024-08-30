@@ -26,9 +26,15 @@ local	icex:INITCOMMONCONTROLSEX
 TabCreate endp
 
 .data
-iItem 	dd -1
+
+iItem 	dd -1		; usiamo questa variabile come contatore di tab. Ad ogni aggiunta, sottraiamo 1 (da controllare che sia corretto altrimenti usare un array...)
 
 .code
+
+;
+; Questa procedura consente di aggiungere un tab al componente tab
+; Input:	hTab - hwnd del componente tab a cui aggiungere il nuovo tab
+;		szTitle - stringa con il titolo del tab (in questo programma il nome del file)
 
 AddTab	proc htab:HWND, sztitle:DWORD
 local	tie:TCITEM
@@ -45,3 +51,5 @@ local	tie:TCITEM
 	
 	ret
 AddTab	endp
+
+RemoveTab	proc htab:HWND, index
