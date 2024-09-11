@@ -50,9 +50,10 @@ local	hEdit:HWND
 
 	invoke 	SendMessage, htab, 1307h, iItem, addr tie
 
-	invoke	CreateWindowEx, NULL, offset WC_TABCONTROL, NULL, WS_CHILD or WS_VISIBLE or WS_BORDER or ES_MULTILINE, 20, 40, 260, 150, htab, NULL, hInstance, NULL
-	mov	hEdit, eax
-	invoke	ShowWindow, hEdit, SW_SHOW
+	; aggiungiamo il componente editor
+	invoke	CreateWindowEx, NULL, offset compEdit, NULL, WS_CHILD or WS_VISIBLE or WS_BORDER or ES_MULTILINE, 20, 40, 260, 150, htab, NULL, hInstance, NULL
+;	mov	hEdit, eax
+;	invoke	ShowWindow, hEdit, SW_SHOW
 	
 	ret
 AddTab	endp
