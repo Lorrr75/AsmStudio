@@ -25,7 +25,22 @@ local	rect:RECT
 
 	.ELSEIF uMsg == WM_PAINT
 		xor	eax, eax
-		ret
+		mov 	ecx, [eax].NMHDR.hwndFrom
+
+;		cmp 	ecx, hTab
+ ;   		jne	noTab
+;    		mov edx, [eax].NMHDR.code    	
+;    		cmp edx, 0fffffde7h	;TCN_SELCHANGE = TTN_FIRST (0fffffde8h - 1)
+;		jne	noTab
+
+;		invoke 	SendMessage, htab, 1311h, 0, 0
+
+		
+
+noTab:
+	.ELSEIF uMsg == WM_NOTIFY
+		mov	eax, lParam
+		
 	.ELSE
 		invoke DefWindowProc, hWnd, uMsg, wParam, lParam
 		ret

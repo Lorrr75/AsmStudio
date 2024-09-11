@@ -20,7 +20,7 @@ local	icex:INITCOMMONCONTROLSEX
 
 	invoke	InitCommonControlsEx, ADDR icex
 
-	invoke	CreateWindowEx, NULL, offset WC_TABCONTROL, NULL, WS_CHILD or WS_CLIPSIBLINGS or WS_VISIBLE, rect.left, rect.top, 300, 200, hwnd, NULL, NULL, NULL
+	invoke	CreateWindowEx, NULL, offset WC_TABCONTROL, NULL, WS_CHILD or WS_CLIPSIBLINGS or WS_VISIBLE, rect.left, rect.top, 300, 200, hwnd, NULL, hInstance, NULL
 
 	ret
 TabCreate endp
@@ -38,6 +38,7 @@ iItem 	dd -1		; usiamo questa variabile come contatore di tab. Ad ogni aggiunta,
 
 AddTab	proc htab:HWND, sztitle:DWORD
 local	tie:TCITEM
+local	hEdit:HWND
 
 	mov	ecx, iItem
 	inc	ecx
@@ -48,8 +49,14 @@ local	tie:TCITEM
 	mov	tie.pszText, eax
 
 	invoke 	SendMessage, htab, 1307h, iItem, addr tie
+
+	invoke	CreateWindowEx, NULL, offset WC_TABCONTROL, NULL, WS_CHILD or WS_VISIBLE or WS_BORDER or ES_MULTILINE, 20, 40, 260, 150, htab, NULL, hInstance, NULL
+	mov	hEdit, eax
+	invoke	ShowWindow, hEdit, SW_SHOW
 	
 	ret
 AddTab	endp
 
 RemoveTab	proc htab:HWND, index
+	ret
+RemoveTab	endp
