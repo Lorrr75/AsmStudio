@@ -1,0 +1,33 @@
+Obiettivo: Projetto ide assembly simile a Visual Studio
+
+- continuare con i tuorial su masm32
+
+- creare il menu file come in VS2022 una voce di menù alla volta
+* nuovo
+* apri
+* aggiungi
+* salva
+* salva tutto
+* chiudi soluzione
+* stampa
+* file recenti
+* progetti recenti
+* esci
+- create una serie di tab editor
+- creare il menu modifica
+* creare le "finestre" figlie come DockPanel o qualcosa di simile
+* creare il ? per avere aiuti sull'interfaccia usando WS_EX_CONTEXTHELP in dwExStyle in CretaeWindowsEx
+* cercare la funzionalità WS_EX_MDICHILD finestra figlio MDI per eventuale implementazione
+*
+- creare un intellisense
+- creare un assembler da integrare
+- creare un debug da integrare
+- aggiungere il bottone di chiusura al tab (29/08/2024 documentazione non trovata per cui rimandiamo la feature)
+
+
+
+completati:
+- creare una finestra
+- creare una finestra a tab
+- creare una finestra editor all'interno del tab
+- creare una finestra editor richEdit all'interno del tab

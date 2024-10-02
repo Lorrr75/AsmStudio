@@ -52,8 +52,7 @@ local	hEdit:HWND
 
 	; aggiungiamo il componente editor
 	invoke	CreateWindowEx, NULL, offset compEdit, NULL, WS_CHILD or WS_VISIBLE or WS_BORDER or ES_MULTILINE, 20, 40, 260, 150, htab, NULL, hInstance, NULL
-;	mov	hEdit, eax
-;	invoke	ShowWindow, hEdit, SW_SHOW
+
 	
 	ret
 AddTab	endp
