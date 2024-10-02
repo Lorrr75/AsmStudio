@@ -4,7 +4,7 @@ Cercherò di tenere su GitHub il codice sorgente, e l'eseguibile; i restanti fil
 
 Il file a.bat mi permette di assemblare e linkare il tutto senza dover riscrivere continuamente sulla linea di comando la sintassi (un po' prolissa)
 
-A seguto una road map per trovare la fine del progetto:
+A seguto una serie di obbiettivi per arrivare alla fine del progetto:
 
 - 1° obbiettivo: creare un editor di testo che permetta la creazione di soluzioni e progetti con varie opzioni di ricerca e anche una funzione di completamento del codice e suggerimento di variabili già dichiarate per semplificare la scrittura del codice specialemte nelle strutture.
 	Spachettizzazione dell'obbiettivo 1:

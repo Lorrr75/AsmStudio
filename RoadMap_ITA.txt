@@ -1,4 +1,4 @@
-Obiettivo: Projetto ide assembly simile a Visual Studio
+Obiettivo: Progetto ide assembly simile a Visual Studio
 
 - continuare con i tuorial su masm32
 
