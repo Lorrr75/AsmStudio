@@ -7,13 +7,7 @@ The a.bat file allows me to assemble and link everything without having to conti
 This was followed by a series of objectives to reach the end of the project:
 
 - Goal 1: create a text editor allowing the creation of solutions and projects with various search options and also a code completion function and suggestion of already declared variables to simplify the writing of code especially in structures.
-	Spacification of objective 1:
-	* Creation of a window
-	* Creation of a child window in which to insert files
-	* Creation of the file menu for closing the programme
-	* File menu update for opening source files
-	* (.... more coming)
-
+	
 - 2nd goal: integrate masm32 and other assemblers to compile projects
 
 - 3rd objective: create an internal assembler with Intel syntax to compile projects internally

@@ -7,13 +7,7 @@ Il file a.bat mi permette di assemblare e linkare il tutto senza dover riscriver
 A seguto una serie di obbiettivi per arrivare alla fine del progetto:
 
 - 1° obbiettivo: creare un editor di testo che permetta la creazione di soluzioni e progetti con varie opzioni di ricerca e anche una funzione di completamento del codice e suggerimento di variabili già dichiarate per semplificare la scrittura del codice specialemte nelle strutture.
-	Spachettizzazione dell'obbiettivo 1:
-	* Creazione di una finestra
-	* Creazione di una finestra figlia dove inserire i file
-	* Creazione del menu file per chiusura programma
-	* Aggiornamento menu file per apertura file sorgente
-	* (.... altri in arrivo)
-
+	
 - 2° obbiettivo: integrare masm32 e altri assembler per compilare i progetti
 
 - 3° obbiettivo: creare un assembler interno con sintassi Intel per compilare internamente i progetti
