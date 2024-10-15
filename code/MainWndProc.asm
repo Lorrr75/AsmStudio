@@ -30,6 +30,9 @@ local	rect:RECT
 		
 	.ELSEIF uMsg == WM_NOTIFY
 		mov	eax, lParam
+	
+	.ELSEIF uMsg == WM_COMMAND
+		invoke	HandleMenu, wParam
 		
 	.ELSE
 		invoke DefWindowProc, hWnd, uMsg, wParam, lParam

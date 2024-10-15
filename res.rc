@@ -1,1 +1,13 @@
 #include "c:\masm32\include\resource.h"
+
+#define IDM_FILE_NEW	1
+
+
+MainMenu MENU
+{
+  POPUP "&File"
+  {
+     MENUITEM "&Nuovo", IDM_FILE_NEW
+  }
+
+}

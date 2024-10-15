@@ -43,6 +43,7 @@ include code\RegisterWindowMainClass.asm	; funzione registrazione classe della f
 include code\InitIde.asm			; funzione di inizializzazione 
 include code\DeInitIde.asm			; funzione di cancellazione dai inizializzati
 include code\TabComponent.asm			; funzioni per la creazione del componente Tab
+include code\Menu.asm				; funzioni per la gestione del menu
 
 ; qui indichiamo la fine del file con il punto d'ingresso del programma
 end	main
