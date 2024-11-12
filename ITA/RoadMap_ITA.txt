@@ -2,6 +2,7 @@ Obiettivo: Progetto ide assembly simile a Visual Studio
 
 - continuare con i tuorial su masm32
 
+- creare un secondo tab e aggiornare il tab con editor corretto
 - creare il menu file come in VS2022 una voce di menù alla volta
 * nuovo
 * apri

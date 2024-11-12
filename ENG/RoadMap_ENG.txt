@@ -1,8 +1,9 @@
-Goal: ide assembly project similar to Visual Studio
+Objective: ide assembly project similar to Visual Studio
 
-- continue with tuorials on masm32
+- continue with tuorial on masm32
 
-- create the file menu as in VS2022 one menu item at a time
+- create a second tab and update the tab with the correct editor
+- create the menu file as in VS2022 one menu item at a time
 * new
 * open
 * add
@@ -12,7 +13,7 @@ Goal: ide assembly project similar to Visual Studio
 * print
 * recent files
 * recent projects
-* quit
+* exit
 - create a series of tab editors
 - create the edit menu
 * create child ‘windows’ like DockPanel or something similar

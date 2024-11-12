@@ -1,5 +1,14 @@
 .686
 
+NR 	struct
+  hwndFrom	DW ?
+  idFrom	DW ?
+  code		DW ?
+NR	ends
+
+.data?
+sTab	DW ?
+
 .code
 
 ;
@@ -9,6 +18,7 @@ MainWndProc proc hWnd:HWND, uMsg:UINT, wParam:WPARAM, lParam:LPARAM
 local	hdc:HDC
 local	ps:PAINTSTRUCT
 local	rect:RECT
+
 
 	.IF uMsg == WM_DESTROY
 		invoke PostQuitMessage, NULL
@@ -30,7 +40,18 @@ local	rect:RECT
 		
 	.ELSEIF uMsg == WM_NOTIFY
 		mov	eax, lParam
-	
+		push	eax
+		pop	sTab		
+
+		mov	eax, DWORD PTR [sTab+8]
+		cmp	eax, TCN_SELCHANGE
+		jne	NO_TAB_NOTIFY
+
+		invoke SendMessage, hTab, TCM_GETCURSEL, 0, 0
+
+NO_TAB_NOTIFY:
+		ret
+
 	.ELSEIF uMsg == WM_COMMAND
 		invoke	HandleMenu, wParam
 		
