@@ -12,7 +12,7 @@ sTab	DW ?
 .code
 
 ;
-; Funzione di gestione dei messaggi che provengono da windows
+; Function to handle messages that come from windows
 ;
 MainWndProc proc hWnd:HWND, uMsg:UINT, wParam:WPARAM, lParam:LPARAM
 local	hdc:HDC
@@ -39,7 +39,7 @@ local	rect:RECT
 		ret
 		
 	.ELSEIF uMsg == WM_NOTIFY
-		; non funzionante
+		; not working
 		mov	eax, lParam
 		push	eax
 		pop	sTab		

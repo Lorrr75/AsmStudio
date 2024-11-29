@@ -1,7 +1,7 @@
 .386
 
 .data
-szTestTest db "test de Giazz",0		; testo senza senso per test
+szTestTest db "test de Giazz",0		; nonsense text for test
 
 .code
 
