@@ -3,6 +3,7 @@ Objective: ide assembly project similar to Visual Studio
 - continue with tuorial on masm32
 
 - create a second tab and update the tab with the correct editor
+- Create reading from *.ini files. A good place to start is RadAsm with the IniRead function.
 - create the menu file as in VS2022 one menu item at a time
 * new
 * open
